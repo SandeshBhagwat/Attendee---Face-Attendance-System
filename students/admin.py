@@ -1,4 +1,4 @@
-from msilib.schema import AdminUISequence
+# from msilib.schema import AdminUISequence
 from django.contrib import admin
 
 # Register your models here.
