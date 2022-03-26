@@ -1,0 +1,186 @@
+{% extends 'basic.html' %}
+
+{% block body %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/home.css' %}">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=”stylesheet” href=”https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css”rel=”nofollow” integrity=”sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm” crossorigin=”anonymous”>
+    <link rel=”stylesheet” href=”https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css”rel=”nofollow” integrity=”sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I” crossorigin=”anonymous”> 
+
+    <title>{% block title %}HOME{% endblock title %}HOME</title>
+
+        <div class="content">
+            <div class="content">
+                <h1>Face Recognition based <br><span>Authentication</span> <br>System</h1>
+                <p class="par">A one stop solution for all your Detection requirements<br>
+                    The website is currently in it's in buildin process and will be available soon
+                    <br> We will be very thankful if there are any kind of feedbacks from your side.
+                </p>
+
+                <div class="container">
+                    <div class="forms">
+                        <div class="form login">
+                            <span class="title">Login</span>
+
+                            <form action="login" method="post">
+                                {% csrf_token %}
+                                <div class="input-field">
+                                    <input type="email" name="email" placeholder="email" required>
+                                    <i class="uil uil-envelope icon"></i>
+                                </div>
+                                <div class="input-field">
+                                    <input type="password" name="password" class="password" placeholder="Your password"  required>
+                                    <i class="uil uil-lock icon"></i>
+                                    <i class="uil uil-eye-slash showHidePw"></i>
+                                </div>
+
+                                <div class="checkbox-text">
+                                    <div class="checkbox-content">
+                                        <input type="checkbox" id="logCheck">
+                                        <label for="logCheck" class="text">Remember me</label>
+                                    </div>
+
+                                    <a href="#" class="text">Forgot password?</a>
+                                </div>
+
+                                <div class="input-field button">
+                                    <input type="button" value="Login Now">
+                                </div>
+                            </form>
+
+                            <div class="login-signup">
+                                <span class="text">Not a member?
+                                    <a href="#" class="text signup-link">Signup now</a>
+                                </span>
+                            </div>
+                        </div> 
+                    
+                     <!-- Registration Form -->   
+                        <div class="form signup">
+                            <span class="title">Registration</span>
+
+                            <form action="register" method="post">
+                                {% csrf_token %}
+                                <div class="input-field">
+                                    <input type="text" placeholder="Enter your first name.." required>
+                                    <i class="uil uil-user"></i>
+                                </div>
+                                <div class="input-field">
+                                    <input type="text" placeholder="Enter your last name.." required>
+                                    <i class="uil uil-user"></i>
+                                </div>
+                                <div class="input-field">
+                                    <input type="email" placeholder="Enter your email" required>
+                                    <i class="uil uil-envelope icon"></i>
+                                </div>
+                                <div class="input-field">
+                                    <input type="password" class="password" placeholder="Create a password" required>
+                                    <i class="uil uil-lock icon"></i>
+                                </div>
+                                <div class="input-field">
+                                    <input type="password" class="password" placeholder="Confirm a password" required>
+                                    <i class="uil uil-lock icon"></i>
+                                    <i class="uil uil-eye-slash showHidePw"></i>
+                                </div>
+                                
+                                <div class="input-field button">
+                                    <input type="button" value="Capture my face">
+                                </div>
+
+                                <div class="input-field button">
+                                    <input type="button" value="Register">
+                                </div>
+                            </form>
+
+                            <div class="login-signup">
+                                <span class="text">Already registered?
+                                    <a href="#" class="text login-link">Go to Login page</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+                <script>
+                    const container = document.querySelector(".container"),
+                        pwShowHide = document.querySelectorAll(".showHidePw"),
+                        pwFields = document.querySelectorAll(".password"),
+                        signUp = document.querySelector(".signup-link"),
+                        login = document.querySelector(".login-link");
+
+                    //   js code to show/hide password and change icon
+                    pwShowHide.forEach(eyeIcon => {
+                        eyeIcon.addEventListener("click", () => {
+                            pwFields.forEach(pwField => {
+                                if (pwField.type === "password") {
+                                    pwField.type = "text";
+
+                                    pwShowHide.forEach(icon => {
+                                        icon.classList.replace("uil-eye-slash", "uil-eye");
+                                    })
+                                } else {
+                                    pwField.type = "password";
+
+                                    pwShowHide.forEach(icon => {
+                                        icon.classList.replace("uil-eye", "uil-eye-slash");
+                                    })
+                                }
+                            })
+                        })
+                    })
+
+
+                    // js code to appear signup and login form
+                    signUp.addEventListener("click", () => {
+                        container.classList.add("active");
+                    });
+                    login.addEventListener("click", () => {
+                        container.classList.remove("active");
+                    });
+
+                </script> 
+
+                <!-- Code injected by live-server -->
+                <script type="text/javascript">
+                    // <![CDATA[  <-- For SVG support
+                    if ('WebSocket' in window) {
+                        (function () {
+                            function refreshCSS() {
+                                var sheets = [].slice.call(document.getElementsByTagName("link"));
+                                var head = document.getElementsByTagName("head")[0];
+                                for (var i = 0; i < sheets.length; ++i) {
+                                    var elem = sheets[i];
+                                    var parent = elem.parentElement || head;
+                                    parent.removeChild(elem);
+                                    var rel = elem.rel;
+                                    if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                                        var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                                        elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                                    }
+                                    parent.appendChild(elem);
+                                }
+                            }
+                            var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                            var address = protocol + window.location.host + window.location.pathname + '/ws';
+                            var socket = new WebSocket(address);
+                            socket.onmessage = function (msg) {
+                                if (msg.data == 'reload') window.location.reload();
+                                else if (msg.data == 'refreshcss') refreshCSS();
+                            };
+                            if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                                console.log('Live reload enabled.');
+                                sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                            }
+                        })();
+                    }
+                    else {
+                        console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+                    }
+                </script>
+            </div>
+        </div>
+
+{% endblock body %}

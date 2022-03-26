@@ -1,0 +1,44 @@
+{% extends 'teachers.html' %} 
+
+{% block body %} 
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/teacherDashboard.css' %}">
+
+<title>{% block title %}Dashboard{% endblock title %}</title>
+
+<h2>Dashboard<br> Welocome!</h2>
+
+
+<div class="tablecontainer">
+    <h2>Your Students</h2>
+    <ul class="responsive-table">
+      <li class="table-header">
+        <div class="col col-1">ID</div>
+        <div class="col col-2">First Name</div>
+        <div class="col col-3">Last Name</div>
+        <div class="col col-4">Username</div>
+        <div class="col col-5">Email</div>
+
+
+
+      </li>
+      {%for u in  user%}
+      
+
+      <li class="table-row">
+        <div class="col col-1" data-label="Id">{{u.id}}</div>
+        <div class="col col-2" data-label="Student Name">{{u.first_name}}</div>
+        <div class="col col-3" data-label="Last Name">{{u.last_name}}</div>
+        <div class="col col-4" data-label="Username">{{u.username}}</div>
+        <div class="col col-5" data-label="Email">{{u.email}}</div>
+
+
+
+      </li>
+      {%endfor%}
+
+    </ul>
+  </div>
+
+
+{% endblock %}

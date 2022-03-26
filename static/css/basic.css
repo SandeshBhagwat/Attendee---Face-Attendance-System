@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .main {
+            width: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%), url(/static/images/3.jpg);
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+        }
+
+        .navbar {
+            float: left;
+            width: 800px;
+            height: 70px;
+            margin: auto;
+        }
+
+        .icon {
+            width: 200px;
+            float: left;
+            height: 70px;
+        }
+
+        .logo {
+            color: #ff7200;  
+            font-size: 35px;
+            font-family: Arial;
+            padding-left: 80px;
+            float: left;
+            padding-top: 10px;
+            margin-top: 5px
+        }
+
+        .menu {
+            width: 400px;
+            float: left;
+            height: 70px;
+        }
+
+        ul {
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul li {
+            list-style: none;
+            margin-left: 62px;
+            margin-top: 27px;
+            font-size: 14px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-family: Arial;
+            font-weight: bold;
+        }
+
+        ul li a:hover {
+            color: #ff7200;
+        }
+
+        .alert-dismissible {
+            padding-right: 80px;
+        }
+
+        .alert {
+            position: relative;
+            padding: 5 5px;
+            margin-bottom: 1rem;
+            border: 2px solid transparent;
+            border-radius: 2px;
+        }
+
+        .fade {
+            transition: opacity 1s linear;
+        }

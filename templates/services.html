@@ -1,0 +1,187 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/services.css' %}">
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %}SERVICE{% endblock title %}</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:500,700&display=swap" rel="stylesheet">
+</head>
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: 'Poppins', sans-serif;
+	}
+
+	.main {
+		width: 100%;
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%), url(1.jpg);
+		background-position: center;
+		background-size: cover;
+		height: 100vh;
+	}
+
+	.navbar {
+		float: left;
+		width: 800px;
+		height: 70px;
+		margin: 0 0 0 0px;
+	}
+
+	.icon {
+		width: 200px;
+		float: left;
+		height: 70px;
+	}
+
+	.logo {
+		color: #ff7200;
+		font-size: 35px;
+		font-family: Arial;
+		padding-left: 80px;
+		float: left;
+		padding-top: 10px;
+		margin-top: 5px
+	}
+
+	.menu {
+		width: 400px;
+		float: left;
+		height: 70px;
+	}
+
+	ul {
+		float: left;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	ul li {
+		list-style: none;
+		margin-left: 62px;
+		margin-top: 27px;
+		font-size: 14px;
+	}
+
+	ul li a {
+		text-decoration: none;
+		color: #fff;
+		font-family: Arial;
+		font-weight: bold;
+	}
+
+	ul li a:hover {
+		color: #ff7200;
+	}
+</style>
+
+
+
+<body>
+	<div class="main">
+		<div class="navbar">
+			<div class="icon">
+				<h2 class="logo">AttenDee</h2>
+			</div>
+
+			<div class="menu">
+				<ul>
+					<li><a href="/">HOME</a></li>
+					<li><a href="/about">ABOUT</a></li>
+					<li><a href="/services">SERVICES</a></li>
+					<li><a href="/feedback">FEEDBACK</a></li>
+					<li><a href="/contactus">CONTACT</a></li>
+					<li><a href="#">EXIT</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<section class="section-services">
+			<div class="container">
+				<div class="row justify-content-center text-center">
+					<div class="col-md-10 col-lg-8">
+						<div class="header-section">
+							<b>
+								<h1 class="title">Our Servises</h1>
+							</b>
+							<h4 class="description">We try to provide the best services</h4>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+
+					<div class="col-md-6 col-lg-4">
+						<div class="single-service">
+							<div class="part-1">
+
+								<b>
+									<div style="color:#fff;" class="title">ACCESSIBILITY</div>
+								</b>
+							</div>
+							<div class="part-2">
+								<p class="description">You can easily access this website by your Laptop as well as
+									Smartphone.
+								</p>
+
+							</div>
+						</div>
+					</div>
+
+
+					<div class="col-md-6 col-lg-4">
+						<div class="single-service">
+							<div class="part-1">
+
+								<b>
+									<div style="color:#fff;" class="title">ATTENDANCE TIME </div>
+								</b>
+							</div>
+							<div class="part-2">
+								<p class="description">It takes less time for attendace, so that you can spend more time
+									in
+									learning.</p>
+
+							</div>
+						</div>
+					</div>
+
+
+					<div class="col-md-6 col-lg-4">
+						<div class="single-service">
+							<div class="part-1">
+
+								<b>
+									<div style="color:#fff;" class="title">DATA HANDLING </div>
+								</b>
+							</div>
+							<div class="part-2">
+								<p class="description"> Handling the large attendance data is easy and at your finger
+									tips.
+								</p>
+
+							</div>
+						</div>
+					</div>
+
+
+
+
+				</div>
+			</div>
+
+		</section>
+	</div>
+
+</body>
+
+</html>

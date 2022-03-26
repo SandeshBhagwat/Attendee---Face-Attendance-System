@@ -1,0 +1,108 @@
+{% extends 'basic.html' %}
+{% block body %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/about.css' %}">
+{% comment %} <!DOCTYPE html>
+<html>
+
+<head> {% endcomment %}
+    <title>
+        {% block title %}ABOUT{% endblock title %}
+    </title>
+{% comment %} </head> {% endcomment %}
+
+<header>
+    <section class="header-content">
+
+        <p class="rocky-dashed animate-pop-in"
+            style="font-size: 80px;font-family: Arial, Helvetica, sans-serif;color: #ff7200;">AttenDee</p>
+        <h1 class="header-title animate-pop-in">Face Detection and Recognition using Python</h1>
+        <h3 class="header-subtitle animate-pop-in">A easier way of facial detection.</h3>
+
+    </section>
+</header>
+
+ <body background="\static\images\3.jpg">
+
+    <h1
+        style="text-align: center;color: #ff7200;font-style:arial ; font-size: 90px;font-family:'Times New Roman', Times, serif;">
+        About.
+    </h1>
+    <table cellspacing="0.5px" style="color: #F9FCFF;">
+        <tr>
+
+            <td rowspan="3">
+                <img src="\static\images\2.jpeg" style="height:600px;width: 700px;margin:15px;">
+            </td>
+
+            <td colspan="2">
+                <h1 style="color: #ff7200;text-align: left;font-size: 50px;margin-bottom: 100px;">Face recogntion based
+                    attendance. </h1>
+                <h2 style="text-align: left;;">A system for folding and recognizing human
+                    faces fast and precisely for attendance.
+                </h2>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-left: 0px;">
+                <img src="\static\images\logo 1.jpg" alt="logo" height="100px" width="100px">
+            </td>
+            <td>
+                <p style="text-align: left;">
+                <h2>
+                    Face scanning.
+                </h2>
+                <h3>
+                    use will be more convenient to use.
+                </h3>
+                </p>
+        </tr>
+        <tr>
+            </td>
+            <td style="padding-left: 5px;">
+                <img src="\static\images\logo 2.jpg" alt="logo" height="100px" width="100px">
+            </td>
+            <td>
+                <p style="text-align: left;">
+                <h2>
+                    User friendly
+                </h2>
+                <h3>
+                    Easily accessible and understandable to the users.
+                </h3>
+            </td>
+            </p>
+        </tr>
+    </table>
+
+    <p>
+
+    <div class="image__overlay1">
+        <h2>
+            The website is mainly built for the purpose of the use of facial recogntion system
+            using Python. <br>
+            <div class="image__title">Detection</div>
+        </h2>
+    </div>
+    <img class="image__img" src="\static\images\5.jpeg" alt="person"> <br>
+    <div class="image__overlay2">
+        <h2>
+            We mainly focused on user friendly experience so that you can move with a ease inside
+            the website. <br>
+            <div class="image__title">Processing</div>
+        </h2>
+    </div>
+    <img class="image__img" src="\static\images\6.jpeg" alt="face"><br>
+    <div class="image__overlay3">
+        <h2>
+            The website is made using with the use of HTML and css completely of the front end
+            purpose rest backend part is made using the Python code as the name suggests. <br>
+            <div class="image__title">Recognition</div>
+        </h2>
+    </div>
+    <img class="image__img" src="\static\images\7.png" alt="crowd">
+    </h2>
+{% comment %} </body> {% endcomment %}
+{% endblock body %}
+
+{% comment %} </html> {% endcomment %}

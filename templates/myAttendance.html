@@ -1,0 +1,45 @@
+{% extends 'students.html' %} 
+{% block body %} 
+{% load static %}
+<!-- {% load custom_tags %} -->
+<link rel="stylesheet" type="text/css" href="{% static '/css/myAttendance.css' %}" />
+<title>{% block title %}Attendance History{% endblock title %}</title>
+{% comment %} {% for h in history%}
+<h1>{{h.0}}&nbsp{{h.1}}&nbsp{{h.2}}&nbsp{{h.3}}&nbsp{{h.4}}&nbsp{{h.5}} <br> {% endcomment %}
+
+
+{% comment %} {% endfor %} {% endcomment %}
+
+<div class="tablecontainer">
+    <h2>Attendance History</h2>
+    <ul class="responsive-table">
+      <li class="table-header" >
+        <div class="col col-1">id</div>
+        <div class="col col-2">Subject</div>
+        <div class="col col-3">Date</div>
+        <div class="col col-4">Start Time</div>
+        <div class="col col-5">End Time</div>
+        <div class="col col-6">Status</div>
+        
+      </li>
+      {%for h in history%}
+  
+      <li class="table-row">
+        <div class="col col-1" data-label="Job Id">{{h.0}}</div>
+        <div class="col col-2" data-label="Customer Name">{{h.1}}</div>
+        <div class="col col-3" data-label="Amount">{{h.2}}</div>
+        <div class="col col-4" data-label="Payment Status">{{h.3}}</div>
+        <div class="col col-5" data-label="Payment Status">{{h.4}}</div>
+        <div class="col col-6" data-label="Payment Status">{{h.5}}</div>
+  
+      </li>
+      {%endfor%}
+      
+    </ul> 
+  </div>
+   
+
+
+
+
+{% endblock body %}

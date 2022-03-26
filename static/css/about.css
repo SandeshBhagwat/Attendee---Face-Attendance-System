@@ -1,0 +1,262 @@
+.head {
+    text-align: center;
+    color: #ff7200;
+    font-style: arial;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header {
+    width:100%;
+    background-color: #221a94;
+    align-items: center;
+    display: flex;
+    font-size: 18px;
+    height: 100vh;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    transform-style: preserve-3d;
+    perspective: 100px;
+}
+
+/* https://cssanimation.rocks/levelup/public/images/background.jpg  */
+header:before {
+    animation: fade-slide-down 2s .5s cubic-bezier(0, 0.5, 0, 1) forwards;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .8)),
+        no-repeat bottom;
+    background-size: cover;
+    content: "";
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+header:after {
+    animation: rotate-up .5s .5s cubic-bezier(0, 0.5, 0, 1) forwards;
+    background: #F9FCFF;
+    content: "";
+    height: 40rem;
+    left: -5%;
+    position: absolute;
+    right: -5%;
+    top: 90%;
+    transform-origin: 0 0;
+    z-index: 0;
+}
+
+.header-title,
+.header-subtitle {
+    color: #fff;
+}
+
+.header-subtitle {
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+}
+
+.header-button {
+    transform: translateZ(.1px);
+    position: relative;
+    z-index: 10;
+}
+
+.animate-pop-in {
+    animation: pop-in .6s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
+    opacity: 0;
+}
+
+.rocky-dashed {
+    animation-delay: .6s;
+}
+
+.header-title {
+    animation-delay: .8s;
+}
+
+.header-subtitle {
+    animation-delay: 1s;
+}
+
+.header-button {
+    animation-delay: 1.1s;
+}
+
+/* Animations */
+
+@keyframes fade-slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-4rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes pop-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-4rem) scale(.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes rotate-up {
+    100% {
+        transform: rotateZ(-4deg);
+    }
+}
+
+.content {
+    width: 1200px;
+    height: auto;
+    margin: auto;
+    color: rgb(255, 255, 255);
+    position: relative;
+}
+
+.content .par {
+    padding-left: 20px;
+    padding-bottom: 25px;
+    font-family: Arial;
+    letter-spacing: 1.2px;
+    line-height: 30px;
+}
+
+.content h1 {
+    font-family: 'Times New Roman';
+    font-size: 50px;
+    padding-left: 20px;
+    margin-top: 9%;
+    letter-spacing: 2px;
+}
+
+.content .cn {
+    width: 160px;
+    height: 40px;
+    background: #ff7200;
+    border: none;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .4s ease;
+
+}
+
+.content .cn a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: .3s ease;
+}
+
+.cn:hover {
+    background-color: #fff;
+}
+
+.content span {
+    color: #ff7200;
+    font-size: 65px
+}
+
+.note {
+    text-decoration: none;
+    color: #fff;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+.image {
+    position: relative;
+}
+
+.image__img {
+    display: block;
+    height: 815px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    width: 100%;
+
+}
+
+.image__overlay1 {
+    position: absolute;
+    top: auto;
+    left: auto;
+    width: 99%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ff7200;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+
+}
+
+.image__overlay2 {
+    position: absolute;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ff7200;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+}
+
+.image__overlay3 {
+    position: absolute;
+    top: auto;
+    left: auto;
+    width: 99%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ff7200;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+}
+
+.image__overlay1:hover {
+    opacity: 1;
+    transition: 1s;
+}
+
+.image__overlay2:hover {
+    opacity: 1;
+    transition: 1s;
+}
+
+.image__overlay3:hover {
+    opacity: 1;
+    transition: 1s;
+}
+
+.image__title {
+    font-size: 100px;
+    margin-top: 300px;
+}

@@ -1,0 +1,114 @@
+{% extends 'students.html' %}
+{% block body %}
+{% load static %}
+<!-- {% load custom_tags %} -->
+
+<link rel="stylesheet" type="text/css" href="{% static '/css/giveAttendance.css' %}" />
+<title>{% block title %}Give Attendance{% endblock title %}</title>
+
+{% if active %}
+<div class="courses-container">
+    <div class="course">
+        <div class="course-preview">
+            <h6>Time</h6>
+            <h2>{{start_time}}</h2>
+            <h6>To</h6>
+            <h2>{{end_time}}</h2>
+            <!-- 			<a href="#">View all chapters <i class="fas fa-chevron-right"></i></a> -->
+        </div>
+        <div class="course-info">
+            <div class="progress-container">
+                <!-- <div class="progress"></div> -->
+                <span class="progress-text" style="color:rgb(236, 19, 19);">
+                    ends at {{close_time}}
+                
+                </span>
+            </div>
+            <h5>Date :&nbsp;{{date}}</h5>
+            <h2>{{class_name}}</h2>
+
+            <!-- 			<h6>prof.Teacher Name</h6> -->
+            <!-- <button class="btn"> -->
+                <a href="/recognize" class="btn"> Give Your Attendance</a>
+            <!-- </button> -->
+        </div>
+    </div>
+    <ul> *Press Q to terminate the process in case camera remains on for more than 45 seconds.</ul>
+</div>
+
+
+{% else %}
+<!-- <section class="home">
+    <div class="bar error">No active attendance at this moment!</div>
+    <br>
+    LAST ATTENDANCE
+    {{class_name}} <br>
+    {{start_time}} <br>
+    {{end_time}} <br>
+    {{status}}
+    <br>
+
+</section>
+</div> -->
+<!-- <div class="alert alert-danger">
+    <strong>Sorry!</strong>No active Attendance at this moment!
+  </div> -->
+
+  <div class="bar error"> No active attendance at this moment!</div>
+
+
+<div class="courses-container1">
+    <div class="course1">
+        <div class="course-preview1">
+            <h6>Time</h6>
+            <h2>{{start_time}}</h2>
+            <h6>To</h6>
+            <h2>{{end_time}}</h2>
+            <!-- 			<a href="#">View all chapters <i class="fas fa-chevron-right"></i></a> -->
+        </div>
+        <div class="course-info1">
+            <div class="progress-container1">
+                <!-- <div class="progress"></div> -->
+                <span class="progress-text1" style="color:rgb(236, 19, 19);">
+                    
+                
+                </span>
+            </div>
+            <h2>Last Attendence</h2>
+            <h5>Date :&nbsp;{{date}}</h5>
+            <h1>{{class_name}}</h1>
+
+            <!-- 			<h6>prof.Teacher Name</h6> -->
+            <!-- <button class="btn"> -->
+                <a class="btn1">{{status}}</a>
+            <!-- </button> -->
+        </div>
+    </div>
+</div>
+
+
+
+{% endif %}
+
+
+
+<!-- SOCIAL PANEL HTML -->
+
+                    <!-- 
+                    <div style="margin:100px">
+                        <h1>{{class_name }}</h1>
+                        <h1>{{start_time}}</h1>
+                        <h1>{{end_time}}</h1>
+                        <h1>{{create_time}}</h1>
+                        <h1>{{close_time}}</h1>
+                        
+                    
+                        <a href="/recognize"> Give Your Attendance</a>
+                        
+                        
+
+                    </div>
+                 -->
+
+
+{% endblock body %}

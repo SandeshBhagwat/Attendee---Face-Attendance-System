@@ -1,0 +1,130 @@
+{% extends 'teachers.html' %}
+
+{% block body %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/takeAttendance.css' %}" />
+<title>{% block title %}Take Attendance{% endblock title %}</title>
+
+{%if active%}
+<form action="/teachers/attendance/" method="POST">
+  {%csrf_token%}
+  <div class="formcontainer">
+
+    <div class="form__container">
+      <h1 class="form__title">Start Attendance</h1>
+      <form>
+  
+
+        <div class="form-row">
+          <div class="form-control">
+            <label>Subject Name</label>
+            <input type="text" placeholder="subject name" name="subject" required />
+          </div>
+
+          <div class="form-control">
+            <label>Class Date</label>
+            <input type="date" name="class_date" required />
+          </div>
+        </div>
+
+  
+        <div class="form-row">
+
+          <div class="form-control">
+            <label>Start Time</label>
+            <input type="time" name="start_time" required />
+          </div>
+          <div class="form-control">
+            <label>End Time</label>
+            <input type="time" name="end_time" required />
+          </div>
+        </div>
+
+        <div class="form__buttons">
+          <button type="submit">Start Attendance</button>
+        </div>
+    </div>
+</form>
+
+
+
+
+
+
+{%else%}
+
+
+
+<div class="courses-container1">
+  <div class="course1">
+      <div class="course-preview1">
+          <h3 class="text-align: center">Class Time</h3>
+          <h2>{{start_time}}</h2>
+          <h4  class="text-align: center">To</h4>
+          <h2>{{end_time}}</h2>
+          <!-- 			<a href="#">View all chapters <i class="fas fa-chevron-right"></i></a> -->
+      </div>
+      <div class="course-info1">
+          <div class="progress-container1">
+              <!-- <div class="progress"></div> -->
+              <span class="progress-text1" style="color:rgb(236, 19, 19);">
+                  
+              
+              </span>
+          </div>
+          <h1>Attendence initialized for...</h1>
+          <br>
+          <h3>DATE :&nbsp;{{date}}</h3>
+          <br>
+          <h2>SUBJECT:&nbsp;{{class_name}}</h2>
+          <h2>Window For Attendance</h2>
+          <h2>{{create_time}}</h2>
+          <h2>To</h2>
+          <h2>{{close_time}}</h2>
+
+
+          <!-- 			<h6>prof.Teacher Name</h6> -->
+          <!-- <button class="btn"> -->
+          <!-- </button> -->
+      </div>
+  </div>
+</div>
+
+{%endif%}
+
+
+
+
+  <div class="tablecontainer">
+    <h2>Attendance History</h2>
+    <ul class="responsive-table">
+      <li class="table-header">
+        <div class="col col-1">id</div>
+        <div class="col col-2">Subject</div>
+        <div class="col col-3">Date</div>
+        <div class="col col-4">Start Time</div>
+        <div class="col col-5">End Time</div>
+        <div class="col col-6">Present</div>
+
+
+
+      </li>
+      {%for c in classes%}
+
+      <li class="table-row">
+        <div class="col col-1" data-label="Job Id">{{c.0}}</div>
+        <div class="col col-2" data-label="Customer Name">{{c.1}}</div>
+        <div class="col col-3" data-label="Amount">{{c.2}}</div>
+        <div class="col col-4" data-label="Payment Status">{{c.3}}</div>
+        <div class="col col-5" data-label="Payment Status">{{c.4}}</div>
+        <div class="col col-6" data-label="Payment Status">{{c.5}}/{{c.6}}</div>
+
+
+
+      </li>
+      {%endfor%}
+
+    </ul>
+  </div>
+
+{% endblock body %}

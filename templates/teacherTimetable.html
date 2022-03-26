@@ -1,0 +1,167 @@
+{% extends 'teachers.html' %} 
+
+{% block body %} 
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/teacherTimetable.css' %}" /> 
+<title>{% block title %}TimeTable{% endblock title %}</title>
+
+<h1>Time Table</h1>
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-bordered text-center">
+            <thead>
+                <tr class="bg-light-blue">
+                    <th class="text-uppercase bg-light-dark">Time/Day
+                    </th>
+                    <th class="text-uppercase">Monday</th>
+                    <th class="text-uppercase">Tuesday</th>
+                    <th class="text-uppercase">Wednesday</th>
+                    <th class="text-uppercase">Thursday</th>
+                    <th class="text-uppercase">Friday</th>
+                    <th class="text-uppercase">Saturday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-uppercase align-middle bg-light-blue">09:00am</td>
+                    <td>
+                        <span class="bg-sky  text-white font-size16 xs-font-size13">Div C</span>
+                      
+                    </td>
+                    <td>
+                        <span class="bg-green text-white font-size16  xs-font-size13">Div A</span>
+                        
+                    </td>
+
+                    <td>
+                        <span class="bg-yellow  text-white font-size16  xs-font-size13">Div C</span>
+                      
+                        
+                    </td>
+                    <td class="bg-light-gray">
+                       
+                    </td>
+                    <td>
+                        <span class="bg-purple  text-white font-size16  xs-font-size13">Div C</span>
+                       
+                       
+                    </td>
+                    <td>
+                        <span class="bg-pink  text-white font-size16  xs-font-size13">Div J</span>
+                   
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="text-uppercase align-middle bg-light-blue">10:00am</td>
+                    <td class="bg-light-gray">
+                        
+                    </td>
+                    <td class="bg-light-gray">
+
+                    </td>
+                    <td>
+                        <span class="bg-purple  text-white font-size16  xs-font-size13">Div J</span>
+                   
+
+                    </td>
+                    <td>
+                        <span class="bg-green text-white font-size16  xs-font-size13">Div L</span>
+                        
+
+                    </td>
+                    <td>
+                        <span class="bg-pink text-white font-size16  xs-font-size13">Div C</span>
+                      
+                       
+                    </td>
+                    <td class="bg-light-gray">
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="text-uppercase align-middle bg-light-blue">11:00am</td>
+                    <td>
+                        <span class="bg-lightred text-white font-size16  xs-font-size13">Div A</span>
+                     
+                    </td>
+                    <td>
+                        <span class="bg-lightred text-white font-size16  xs-font-size13">Div B</span>
+                       
+                    </td>
+                    <td>
+                        <span class="bg-lightred text-white font-size16  xs-font-size13">Div C</span>
+                 
+                    </td>
+                    <td>
+                        <span class="bg-lightred text-white font-size16  xs-font-size13">Div C</span>
+                      
+                    </td>
+                    <td>
+                        <span class="bg-lightred text-white font-size16  xs-font-size13">Div A</span>
+                    
+                    </td>
+                    <td class="bg-light-gray">
+                       
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="text-uppercase align-middle bg-light-blue">12:00pm</td>
+                    <td class="bg-light-gray">
+
+                    </td>
+                    <td>
+                        <span class="text-white font-size16  xs-font-size13">Div C</span>
+                        
+                    </td>
+                    <td>
+                        <span class="text-white font-size16  xs-font-size13">Div B</span>
+                       
+
+                    </td>
+                    <td>
+                        <span class="text-white font-size16  xs-font-size13">Div A</span>
+                       
+                    </td>
+                    <td class="bg-light-gray">
+
+                    </td>
+                    <td>
+                        <span class="text-white font-size16  xs-font-size13">Div B</span>
+                       
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="text-uppercase align-middle bg-light-blue">01:00pm</td>
+                    <td>
+                        <span class="text-white font-size16  xs-font-size13">Div A</span>
+                      
+                    </td>
+                    <td>
+                        <span class="text-white font-size16  xs-font-size13">Div c</span>
+                      
+                    </td>
+                    <td class="bg-light-gray">
+
+                    </td>
+                    <td>
+                        <span class="text-white font-size16  xs-font-size13">Div A</span>
+                       
+                    </td>
+                    <td>
+                        <span class="text-white font-size16  xs-font-size13">Div J</span>
+                       
+                    </td>
+                    <td class="bg-light-gray">
+                       
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

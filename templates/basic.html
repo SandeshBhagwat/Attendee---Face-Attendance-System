@@ -1,0 +1,45 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/basic.css' %}">
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        {% block title %}HOME{% endblock title %}
+    </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon" >
+                <h2 class="logo">AttenDee</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/about">ABOUT</a></li>
+                    <li><a href="/services">SERVICES</a></li>
+                    <li><a href="/feedback">FEEDBACK</a></li>
+                    <li><a href="/contactus">CONTACT</a></li>
+                    <li><a href="#">EXIT</a></li>
+                </ul>
+            </div>
+        </div>
+{% comment %} 
+         {% for message in messages %}
+        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+            {{message}}
+            <button type="button" class="btn-close"  data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          {% endfor %} {% endcomment %}
+
+        {% block body %}{% endblock body %}  
+    </div>
+  
+
+</body>
+
+</html>

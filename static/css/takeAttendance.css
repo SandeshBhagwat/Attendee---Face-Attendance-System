@@ -1,0 +1,426 @@
+body {
+    font-family: 'lato', sans-serif;
+  }
+  .tablecontainer {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  h2 {
+    font-size: 26px;
+    margin: 20px 0;
+    text-align: center;
+    
+  }
+  
+.responsive-table li {
+      border-radius: 3px;
+      padding: 25px 30px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 25px;
+    }
+    .table-header {
+      background-color: #1c59cc;
+      font-size: 16px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .table-row {
+      background-color: #ffffff;
+      box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+    }
+    .col-1 {
+      flex-basis: 10%;
+    }
+    .col-2 {
+      flex-basis: 20%;
+    }
+    .col-3 {
+      flex-basis: 20%;
+    }
+    .col-4 {
+      flex-basis: 20%;
+    }
+    .col-5{
+        flex-basis: 20%;
+    }
+    .col-6{
+      flex-basis: 10%;
+  }
+    
+    @media all and (max-width: 767px) {
+      .table-header {
+        display: none;
+      }
+      .table-row{
+        
+      }
+      li {
+        display: block;
+      }
+      .col {
+        
+        flex-basis: 100%;
+        
+      }
+      .col {
+        display: flex;
+        padding: 10px 0;
+        /* &:before {
+          color: #6C7A89;
+          padding-right: 10px;
+          content: attr(data-label);
+          flex-basis: 50%;
+          text-align: right;
+        }
+      } */
+    }
+  }
+
+
+   html * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  *, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  } 
+  
+  /* html {
+     font-size: 62.5%;
+  } */
+  
+  body {
+     text-rendering: optimizeLegibility;
+     /* background: #cfd8dc; */
+  }
+  
+  .formcontainer {
+     position: relative;
+     width: 100%;
+     
+  
+  }
+  
+  /* form container */
+  .form__container {
+     position: relative;
+     max-width: 60rem;
+     margin: 3rem auto; /* test purposes only - set to 0 */
+     background: #fff;
+     padding: 3rem 3rem 3rem 3rem;
+     border-radius: 10px;
+     overflow: hidden;
+     box-shadow: 0 0 5rem rgba(0, 0, 0, 0.1);
+     /*box-shadow: 26px 33px 121px 0px rgba(0, 0, 0, 0.4);*/
+  }
+  
+  /* style the close btn */
+  
+  
+  .form__title {
+     color: #293948;
+     font-family: 'Varela Round', sans-serif;
+     font-weight: 600;
+     text-transform: uppercase;
+     text-align: center;
+     margin-bottom: 2rem;
+
+  }
+  
+  /* flexbox rows */
+  .form-row {
+     display: -webkit-box;
+     display: -webkit-flex;
+     display: -ms-flexbox;
+     display: flex;
+     -webkit-box-orient: vertical;
+     -webkit-box-direction: normal;
+     -webkit-flex-direction: column;
+     -ms-flex-direction: column;
+     flex-direction: column;
+     -webkit-flex-wrap: nowrap;
+     -ms-flex-wrap: nowrap;
+     flex-wrap: nowrap;
+  }
+  
+  /* make it reponsive */
+  @media (min-width: 700px) {
+     .form-row {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+     }
+  }
+  
+  /* row spacing */
+  .form-control {
+     position: relative;
+     padding-left: 0.5rem;
+     padding-right: 0.5rem;
+     -webkit-box-flex: 1;
+     -webkit-flex-grow: 1;
+     -ms-flex-positive: 1;
+     flex-grow: 1;
+  }
+  
+  /* fieldset {
+     border: 0;
+     margin: 0;
+     padding: 0;
+     margin-bottom: 2rem;
+  } */
+  
+  /* legend {
+     font-family: 'Varela Round', sans-serif;
+     font-weight: 600;
+     text-transform: uppercase;
+     letter-spacing: .1rem;
+     font-size: .8rem;
+     color: #455a64;
+     display: block;
+     border: 0;
+     padding: 0;
+     margin-bottom: 2rem;
+     overflow: hidden;
+     position: relative;
+     width: 100%;
+     font-size: 62.5%;
+  } */
+  
+  
+  /* legend divider */
+  /* legend:after {
+     content: "";
+     width: 100%;
+     position: absolute;
+     height: 1px;
+     top: 0.5rem;
+     margin-left: 1rem;
+     background: #e8ecef;
+  } */
+  
+  label {
+     color: #b0bec5; /*afc7da*/
+     display: block;
+     font-family: 'Varela Round', sans-serif;
+     font-size: 1.2rem;
+     letter-spacing: 0.035rem;
+     margin-bottom: .5rem;
+     font-size: 100%;
+  }
+  
+  
+  input[type="text"],
+  input[type="date"],
+  input[type="time"],
+  textarea,
+  select {
+     /* main */
+     display: block;
+     height: 3.3rem;
+     padding: .6rem 1rem; /* The 6px vertically centers text on FF */
+     width: 100%;
+     background-color: #fff;
+     border: .1rem solid #c7d6de; /*c7d6de*/
+     border-radius: .5rem;
+     outline: 0;
+     appearance: none;
+     box-shadow: 0;
+     box-shadow: none;  
+     /* typography */
+     font-family: 'Nunito', sans-serif;
+     font-weight: 400;
+     font-size: 1.2rem;
+     margin-bottom: 2rem;
+     text-align: left;
+     color: #141920;
+     line-height: normal;
+     /* transition */
+     transition: all 0.2s ease-in-out;
+     -webkit-transition: all 0.2s ease-in-out;
+  }
+  
+  select {
+     display: inline-block;
+     -webkit-appearance: none;
+     appearance: none;
+     -moz-appearance: window;
+     background: url(https://www.pigeonholelive.com/images/chevron-down.png) no-repeat;
+     background-size: 15px;
+     background-position: right 1.5rem center;
+     color: rgba(52, 72, 91, .3);
+     font-weight: 400;
+  }
+  
+  /* style the focus */
+  input[type="email"]:focus,
+  input[type="text"]:focus,
+  input[type="date"]:focus,
+  input[type="time"]:focus,
+  textarea:focus,
+  select:focus {
+     border: .1rem solid #52a9fd;
+     /*ccdfee def0fe brand primary: 4083c4*/
+     outline: 0;
+  }
+  
+  /* style placeholder text */
+  input::-webkit-input-placeholder {
+     color: rgba(52, 72, 91, .3);
+  }
+  input::-moz-placeholder {
+     color: rgba(52, 72, 91, .3);
+  }
+  input:-moz-placeholder {
+     /* Older versions of Firefox */
+     color: rgba(52, 72, 91, .3);
+  }
+  input:-ms-input-placeholder {
+     color: rgba(52, 72, 91, .3);
+  }
+  
+  /* Remove awkward default styles on some inputs for iOS */
+  input[type="email"],
+  input[type="text"],
+  textarea {
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+  }
+  input::-ms-clear, textarea::-ms-clear {
+    display: none;
+  }
+  button {
+     width: 200px;
+     height: 45px;
+     font-family: 'Varela Round', sans-serif;
+     font-size: 11px;
+     text-transform: uppercase;
+     letter-spacing: 1.5px;
+     font-weight: 500;
+     color: #fff;
+     background-color: #4083c4;
+     border: none;
+     border-radius: 15px;
+     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+     transition: all 0.3s ease 0s;
+     cursor: pointer;
+     outline: none;
+  }
+  button:hover {
+     background-color: #2EE59D;
+     box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+     color: #fff;
+     transform: translateY(-5px);
+  }
+  .form__buttons {
+     background: #FFF;
+     text-align: center;
+     
+  }
+  
+
+
+
+
+
+
+
+
+  .courses-container1 {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+   padding-left: 10px;
+   margin-top: 50px;
+   padding-right: 10px;
+
+  
+}
+
+.course1 {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  max-width: 100%;
+  margin: 20px;
+  overflow: hidden;
+  width: 700px;
+}
+
+.course h6 {
+  opacity: 0.6;
+  margin: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.course h2 {
+  letter-spacing: 1px;
+  margin: 10px 0;
+}
+
+.course-preview1 {
+  background-color: #85858b;
+  color: #fff;
+  padding: 30px;
+  width: 300px;
+}
+
+.course-preview a {
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  opacity: 0.6;
+  margin-top: 30px;
+  text-decoration: none;
+}
+
+.course-info1 {
+  padding: 30px;
+  position: relative;
+  width: 100%;
+}
+
+.progress-container1 {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  text-align: right;
+  width: 150px;
+}
+
+.progress-text1 {
+  font-size: 12px;
+  opacity: 0.6;
+  letter-spacing: 1px;
+  
+}
+
+
+.btn1 {
+   text-decoration: none;
+  background-color: #85858b;
+  border: 0;
+  border-radius: 50px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 25px;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  letter-spacing: 1px;
+}

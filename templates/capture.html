@@ -1,0 +1,160 @@
+{% extends 'students.html' %} 
+{% block body %} 
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/capture.css' %}" />
+
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{% block title %}Capture{% endblock title %}</title>
+<!----======== CSS ======== -->
+<link rel="stylesheet" href="style.css" />
+
+<!----===== Boxicons CSS ===== -->
+<link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
+
+{% comment %} <nav class="sidebar close">
+    <header>
+        <div class="image-text">
+            <div class="text logo-text">
+                <span class="name">AttenDee</span>
+                <span class="profession">Student</span>
+            </div>
+        </div>
+
+        <i class="bx bx-chevron-right toggle"></i>
+    </header>
+
+    <div class="menu-bar">
+        <div class="menu">
+            <li class="search-box">
+                <i class="bx bx-search icon"></i>
+                <input type="text" placeholder="Search..." />
+            </li>
+
+            <ul class="menu-links">
+                <li class="nav-link">
+                    <a href="/students/dashboard">
+                        <i class="bx bx-home-alt icon"></i>
+                        <span class="text nav-text">Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="/students/capture">
+                        <i class="bx bx-camera icon"></i>
+                        <span class="text nav-text">Capture my Face</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="/recognize">
+                        <i class="bx bx-home-alt icon"></i>
+                        <span class="text nav-text">Recognise my Face</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="/students/attendance">
+                        <i class="bx bx-bar-chart-alt-2 icon"></i>
+                        <span class="text nav-text">Attendance</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="/students/timetable">
+                        <i class="bx bx-wallet icon"></i>
+                        <span class="text nav-text">Time Table</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="bottom-content">
+            <li class="">
+                <a href="{% url 'logout' %}">
+                    <i class="bx bx-log-out icon"></i>
+
+                    <span type="submit" method="post" action="logout/" span class="text nav-text">Logout</span>
+                </a>
+            </li>
+
+            <li class="mode">
+                <div class="sun-moon">
+                    <i class="bx bx-moon icon moon"></i>
+                    <i class="bx bx-sun icon sun"></i>
+                </div>
+                <span class="mode-text text">Dark mode</span>
+
+                <div class="toggle-switch">
+                    <span class="switch"></span>
+                </div>
+            </li>
+        </div>
+    </div>
+</nav> {% endcomment %}
+
+<section class="home">
+    <div class="text" class="align-items-center">
+        Capture your face to create dataset.
+    </div>
+    <div class="align-items-center">
+        <p class="text2">
+            Click on the capture button to create your facial dataset <br>for purpose of
+            recognition in future.
+        </p>
+        <div  class="text3" class="list-style-type: square">
+            <ul>
+                1.The webcam will turn on when you click te button.
+            </ul>
+            <ul>
+                2.Camera will be on for approximately 20-30 seconds.
+            </ul>
+            <ul>
+                3.Please look straight in the camera.
+            </ul>
+            <ul>
+                4.No facial movement is expected.
+            </ul>
+        </div>
+    </div>
+    <div class="align-items-center">
+    <div class="form">
+    <form method="post" action="create_dataset/">
+        {% csrf_token %}
+    <input type="submit" value="Capture" >
+    </form>
+    </div>
+    <br>
+    <div  class="text3" class="list-style-type: square">
+            <ul> *Press Q to terminate the process in case camera remains on for more than 45 seconds.</ul>
+    </div>
+</div>
+</section>
+<script>
+    const body = document.querySelector("body"),
+        sidebar = body.querySelector("nav"),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
+
+    toggle.addEventListener("click", () => {
+        sidebar.classList.toggle("close");
+    });
+
+    searchBtn.addEventListener("click", () => {
+        sidebar.classList.remove("close");
+    });
+
+    modeSwitch.addEventListener("click", () => {
+        body.classList.toggle("dark");
+
+        if (body.classList.contains("dark")) {
+            modeText.innerText = "Light mode";
+        } else {
+            modeText.innerText = "Dark mode";
+        }
+    });
+</script>
+{% endblock body %}

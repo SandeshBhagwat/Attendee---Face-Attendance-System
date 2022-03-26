@@ -1,0 +1,65 @@
+{% extends 'teachers.html' %} 
+
+{% block body %} 
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/record.css' %}" /> 
+
+<div class="mycontainer" style="margin:80px">
+    <form action="/teachers/record/" method="POST">
+        {%csrf_token%}
+        <select name="class_id" id="" style="width: 500px; height: 50px; border-radius: 20px; border: 2px solid rgb(13, 43, 173);">
+            <option value="" disabled selected>---Choose Your Class Details---</option>
+
+            {%for c in classes_id%}
+            {{c.subject_name}}
+            <option value="{{c.id}}" >{{c.id}},{{c.subject_name}},{{c.date}},{{c.start_Time}} To {{c.end_Time}}</option>
+            {%endfor%}
+        </select>
+        <input type="submit" style="width: 80px; height: 50px; border-radius: 20px; font-size: 18px; background: rgb(106, 119, 238);" value="Submit">
+    </form>
+</div>
+
+
+<div class="tablecontainer">
+    <h2>Attendance History</h2>
+    <ul class="responsive-table">
+      <li class="table-header">
+        <div class="col col-1">ID</div>
+        <div class="col col-1">Name</div>
+        <div class="col col-2">Subject</div>
+        <div class="col col-3">Date</div>
+        <div class="col col-4">Start Time</div>
+        <div class="col col-5">End Time</div>
+        <div class="col col-6">Present</div>
+
+
+
+      </li>
+      {%for c in  records%}
+      
+
+      <li class="table-row">
+        <div class="col col-1" data-label="Job Id">{{c.0}}</div>
+        <div class="col col-2" data-label="Customer Name">{{c.1}}</div>
+        <div class="col col-3" data-label="Amount">{{c.2}}</div>
+        <div class="col col-4" data-label="Payment Status">{{c.3}}</div>
+        <div class="col col-5" data-label="Payment Status">{{c.4}}</div>
+        <div class="col col-6" data-label="Payment Status">{{c.5}}</div>
+        <div class="col col-6" data-label="Payment Status">{{c.6}}</div>
+
+
+
+      </li>
+      {%endfor%}
+
+    </ul>
+  </div>
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,68 @@
+body{
+    margin-top:20px;
+}
+h1{
+    color: #1a1246;
+    font-size: 36px;
+    margin-top: 80px;
+    margin-left: 400px;
+}
+.container{
+    margin-top: 20px;
+    margin-left: 180px;
+}
+.bg-light-blue {
+    background-color: #4535a1;
+}
+
+.bg-light-dark {
+    background-color: #ab38c2;
+}
+
+.bg-light-gray {
+    background-color: #73717c;
+}
+.table-bordered thead td, .table-bordered thead th {
+    border-bottom-width: 1px;
+}
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #201f1f;
+}
+.table-bordered td, .table-bordered th {
+    border: 1px solid #dee2e6;
+}
+
+.padding-15px-lr {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.padding-5px-tb {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+.bg-sky.box-shadow {
+    box-shadow: 0px 5px 0px 0px #00a2a7
+}
+
+.font-size14 {
+    font-size: 14px;
+}
+
+.text-light-gray {
+    color: #d6d5d5;
+}
+.font-size13 {
+    font-size: 24px;
+}
+
+.table-bordered td, .table-bordered th {
+    border: 1px solid #161616;
+}
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #111111;
+}

@@ -1,0 +1,48 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/feedback.css' %}">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>{% block title %}FEEDBACK{% endblock title %}</title>
+<br>
+<div class="content">
+
+  <h3 class="text-color:white">Your honest view will promote our personal and  <br> educational improvement.</h3>
+  <br>
+  <h4 class="par">
+    Please fill this form to give us your valuable feedback!
+  </h4>
+
+
+<div class="container">
+  <div class="forms">
+
+      <form action="">
+        {% csrf_token %}
+        <span class="title">Feedback Form</span>
+        <br><br>
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Enter your first name..." required>
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Enter your last name..." required>
+
+        <label for="email">Email ID</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email..." required>
+
+        <label for="catagory">Select catagory</label>
+        <select id="catagory" name="Catagory">
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+        </select>
+
+        <label for="subject">Feedback message box</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px" required></textarea>
+
+        <input class"align-items:center" type="submit" value="Submit">
+      </form>
+  </div>
+
+</div>
+{% endblock body %}

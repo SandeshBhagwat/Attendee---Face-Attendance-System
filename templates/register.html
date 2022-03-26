@@ -1,0 +1,122 @@
+{% extends 'basic.html' %}
+
+{% block body %}
+{% comment %} {% load static %} {% endcomment %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/register.css' %}">
+{% comment %}
+<!DOCTYPE html>
+<html>
+
+<head> {% endcomment %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% comment %}
+    <link rel="stylesheet" href="{% static 'home.css'%}"> {% endcomment %}
+    <link rel=”stylesheet” href=”https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css”rel=”nofollow”
+        integrity=”sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm” crossorigin=”anonymous”>
+    <link rel=”stylesheet”
+        href=”https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css”rel=”nofollow”
+        integrity=”sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I” crossorigin=”anonymous”>
+
+
+    <div class="content">
+        <div class="content">
+            <h1>Face Recognition based <br><span>Authentication</span> <br>System</h1>
+            <p class="par">A one stop solution for all your Detection requirements<br>
+                The website is currently in it's in buildin process and will be available soon
+                <br> We will be very thankful if there are any kind of feedbacks from your side.
+            </p>
+
+            <!-- Registration Form -->
+            <div class="container">
+                <div class="forms">
+                    <div class="form signup">
+                        <span class="title">Registration</span>
+
+                        <form id="registerform" action="{% url 'register' %}" method="POST">
+                            {% csrf_token %}
+                            <div class="input-field">
+                                <input type="text" name="first_name" placeholder="Enter your first name.." required>
+                                <i class="uil uil-user"></i>
+                            </div>
+                            <div class="input-field">
+                                <input type="text" name="last_name" placeholder="Enter your last name.." required>
+                                <i class="uil uil-user"></i>
+                            </div>
+                            <div class="input-field">
+                                <input type="text" name="username" placeholder="Username.." required>
+                                <i class="uil uil-user"></i>
+                            </div>
+                            <div class="input-field">
+                                <input type="email" name="email" placeholder="Enter your email" required>
+                                <i class="uil uil-envelope icon"></i>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" name="password" class="password" placeholder="Create a password" required>
+                                <i class="uil uil-lock icon"></i>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" name="conf_pass" class="password" placeholder="Confirm a password" required>
+                                <i class="uil uil-lock icon"></i>
+                                <i class="uil uil-eye-slash showHidePw"></i>
+                            </div>
+
+                            <div class="input-field button">
+                                <input type="submit" name="register_button" value="Register">
+                            </div>
+                        </form>
+                    
+                        <div class="login-signup">
+                            <span class="text">Already registered?
+                                <a href="/" class="text login-link">Login here</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            {% comment %} <script>
+                const container = document.querySelector(".container"),
+                    pwShowHide = document.querySelectorAll(".showHidePw"),
+                    pwFields = document.querySelectorAll(".password"),
+                    signUp = document.querySelector(".signup-link"),
+                    login = document.querySelector(".login-link");
+
+                //   js code to show/hide password and change icon
+                pwShowHide.forEach(eyeIcon => {
+                    eyeIcon.addEventListener("click", () => {
+                        pwFields.forEach(pwField => {
+                            if (pwField.type === "password") {
+                                pwField.type = "text";
+
+                                pwShowHide.forEach(icon => {
+                                    icon.classList.replace("uil-eye-slash", "uil-eye");
+                                })
+                            } else {
+                                pwField.type = "password";
+
+                                pwShowHide.forEach(icon => {
+                                    icon.classList.replace("uil-eye", "uil-eye-slash");
+                                })
+                            }
+                        })
+                    })
+                })
+
+
+                // js code to appear signup and login form
+                signUp.addEventListener("click", () => {
+                    container.classList.add("active");
+                });
+                login.addEventListener("click", () => {
+                    container.classList.remove("active");
+                });
+
+            </script> {% endcomment %}
+        </div>
+    </div>
+
+{% endblock %}

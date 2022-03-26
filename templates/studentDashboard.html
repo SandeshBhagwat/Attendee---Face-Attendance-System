@@ -1,0 +1,48 @@
+{% extends 'students.html' %} 
+
+{% block body %} 
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/studentDashboard.css' %}">
+
+<title>{% block title %}Dashboard{% endblock title %}</title>
+
+<h2>
+<div>Dashboard</div>
+<br>
+<div>Hello, {{user.first_name}}</div>
+</h2>
+<br><br>
+
+
+<div class="card">
+    <div class="img-avatar">
+    </div>
+    <div class="card-text">
+      <div class="portada">
+      
+      </div>
+      <div class="title-total">   
+    <div class="title">Registered Information</div> 
+    <h4>
+        <string>ID: </string>{{user.id}}<br>
+            <string>FIRST NAME:</string> {{user.first_name}}<br>
+                <string>LAST NAME:</string> {{user.last_name}}<br>
+                    <string> USERNAME:</string> {{user.username}}<br>
+                        <string> EMAIL ID:</string> {{user.email}}<br>
+    </h4>
+   </div>
+   
+    </div>
+    
+   
+    
+  </div>
+
+{% comment %} <div class="info">
+    <li class="col col-1" data-label="Job Id"><b>ID:</b> {{user.id}}</li>
+    <li class="col col-2" data-label="Customer Name"><b>FIRST NAME:</b> {{user.first_name}}</li>
+    <li class="col col-3" data-label="Amount"><b>LAST NAME:</b> {{user.last_name}}</li>
+    <li class="col col-4" data-label="Payment Status"><b>USERNAME:</b> {{user.username}}</li>
+    <li class="col col-5" data-label="Payment Status"><b>EMAIL ID:</b> {{user.email}}</li>
+</div {% endcomment %}
+{% endblock %}
