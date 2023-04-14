@@ -23,6 +23,7 @@ python manage.py runserver
 ## Demo
 
 Following videos demonstrate how the system works.
+
 1.Navigation:
 
 https://user-images.githubusercontent.com/100966608/230715072-1cc18f82-490b-4792-9872-6e4d68f9dcbb.mp4
@@ -39,7 +40,7 @@ https://user-images.githubusercontent.com/100966608/230715114-10269476-c13a-47e8
 
 https://user-images.githubusercontent.com/100966608/230715276-c60da647-8206-444a-8711-9e18ce7ba60f.mp4
 
-5.Recors stored and reflected on faculty dashboard
+5.Records stored and reflected on faculty dashboard
 
 https://user-images.githubusercontent.com/100966608/230715319-3afd2ecc-2617-4934-bb5e-92a7ca525ede.mp4
 
